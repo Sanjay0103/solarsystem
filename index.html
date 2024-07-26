@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;  
+            scroll-behavior: smooth;
+        }
+        :root{
+            --orbit-border: 1.6px solid rgba(255, 255, 255, 0.15);
+        }
+        .home{
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .container-one{
+            margin-top: 200px;
+        }
+        .container-one a{
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            background: white;
+            font-weight: 500;
+            color: #000;
+            margin-top: 60px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 02px 4px rgba(255, 255, 255, 0.175);
+        }
+        span{
+            width: 2px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            animation: animate 3s linear  infinite;
+        }
+        @keyframes animate{
+            0%{
+                transform: rotate(310deg) translateX(0);
+                opacity: 1;
+            }
+            70%{
+                opacity: 1;
+            }
+            100%{
+                transform: rotate(310deg) translateX(-1000px);
+                opacity: 0;
+            }
+        }
+        span::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 300px;
+            height: 1px;
+            transform: translateY(-50%);
+        }
+        span:nth-child(1)
+        {
+            top: 0px;
+            right: 0px;
+            animation-delay: 0;
+            animation-duration: 1s;
+        }
+        span:nth-child(2)
+        {
+            top: 0px;
+            right: 80px;
+            animation-delay: -0.9s;
+            animation-duration: 3s;
+        }
+        span:nth-child(3)
+        {
+            top: 80px;
+            right: 40px;
+            animation-delay: -0.5s;
+            animation-duration: 6s;
+        }
+        span:nth-child(4)
+        {
+            top: 40px;
+            left: 380px;
+            animation-delay: -0.2s;
+            animation-duration: 7s;
+        }
+        span:nth-child(5)
+        {
+            top: 50px;
+            left: 600px;
+            animation-delay: -0.6s;
+            animation-duration: 2s;
+        }
+        span:nth-child(6)
+        {
+            top: 350px;
+            left: 1300px;
+            animation-delay: -0.2s;
+            animation-duration: 2s;
+        }
+        span:nth-child(7)
+        {
+            top: 200px;
+            left: 1200px;
+            animation-delay: -0.22s;
+            animation-duration: 2s;
+        }
+        span:nth-child(8)
+        {
+            top: 350px;
+            left: 1300px;
+            animation-delay: -0.5s;
+            animation-duration: 6s;
+        }
+        span:nth-child(9)
+        {
+            top: 30px;
+            left: 1300px;
+            animation-delay: -0.8s;
+            animation-duration: 7s;
+        }
+        .home p{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        .solar-sytem{
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: bg-zooming 8s linear infinite;
+        }
+        .neptiun-orbit{
+            width: 710px;
+            height: 710px;
+            border-radius: 50%;
+            border: var(--orbit-border);
+            animation: neptium-orbit-spin 100s linear infinite;
+            scale: 0.90;
+        }
+        .neptium-planet{
+            color: white;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(140deg,rgb(106, 178, 255),rgb(8, 27, 47));
+            border-radius: 50%;
+            margin: -9px auto;
+
+        }
+        @keyframes neptium-orbit-spin{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+        /*  */
+        .urainus-orbit{
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            margin: 35px auto;
+            border: var(--orbit-border);
+            animation: urainus-orbit-spin 500s linear infinite;
+        }
+        .urainus-planet{
+            color: white;
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(140deg,rgb(149, 149, 149),rgb(8, 27, 47));
+            border-radius: 50%;
+            margin: -8px auto;
+        }
+        @keyframes urainus-orbit-spin{
+            from{
+                rotate: 0;
+            }
+            to{
+                rotate: 360deg;
+            }
+        }
+        /*  */
+        .saturn-orbit{
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            margin: 47px auto;
+            border: var(--orbit-border);
+            rotate: 180deg;
+            animation: saturn-orbit-spin 50s linear infinite;
+        }
+        
+        .saturn-planet-ring-one{
+            border: 2px solid rgba(114, 94, 80, 0.73);
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -33px 230px;
+        }
+        @keyframes saturn-planet-spin{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        } 
+        .saturn-planet-ring-two{
+            border: 10px solid rgba(155, 139, 106, 0.674);
+            border-radius: 50%;
+            height: 90%;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .saturn-planet{
+            color: white;
+            width: 75%;
+            height: 75%;
+            background: linear-gradient(to top,  #74613f, #9e885e,#ac8a57,#9b845c, #b79563, #b48c59, #cead71);
+            border-radius: 50%;
+        }
+        @keyframes saturn-orbit-spin{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+        .jupiter-orbit{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: var(--orbit-border);
+            margin: 50px auto;
+            rotate: 180deg;
+            animation: saturn-planet-spin 90s linear infinite;
+        }
+        @keyframes saturn-orbit-spin{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+        .jupiter-planet{
+            width: 6%;
+            height: 6%;
+            background: linear-gradient(to top, #776259, #74613f, #9e885e,#a8683a,#9b845c, #b79563, #c78c67, #cead71);
+            border-radius: 50%;
+            margin: -13px 0px 00px 205px;
+            scale: 1.1;
+        }
+        .mars-orbit{
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            border: var(--orbit-border);
+            margin: 18px auto;
+            rotate: 180deg;
+            animation: saturn-planet-spin 6s linear infinite;
+        }
+        .mars-planet{
+            width: 3%;
+            height: 3%;
+            border-radius: 50%;
+            background: linear-gradient(-45deg, #ff8335,rgb(169, 79, 15));
+            margin: -6px auto;
+
+        }
+        /*  */
+        .earth-orbit{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: var(--orbit-border);
+            margin: 37px auto;
+            animation: saturn-planet-spin 15s linear infinite;
+        }
+        .earth-system{
+            width: 10%;
+            height: 10%;
+            border-radius: 50%;
+            border-top: 1px solid rgba(255, 255, 255, 0.163);
+            border-right: 1px solid rgba(255, 255, 255, 0.096);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.067);
+            border-left: 1px solid rgba(255, 255, 255, 0.268);
+            margin: -13px auto;
+            animation: earth-system 0.8s linear infinite;
+            scale: 1.6;
+        }
+        @keyframes earth-system{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+        .earth-planet{
+            width: 32%;
+            height: 32%;
+            background: linear-gradient(45deg, #597477, #3f6774, #5e819e,#5c6c9b, #6391b7,  #7198ce);
+            border-radius: 50%;
+            margin: 9px auto;
+            rotate: 23.44deg;
+            animation: earth-planet 5s linear infinite;
+        }
+        @keyframes earth-planet{
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+        .moon{
+            width: 14%;
+            height: 14.5%;
+            border-radius: 50%;
+            background: linear-gradient(-45deg, rgb(214, 214, 214),grey);
+            margin: -5px 2.1px;
+            scale: 0.9;
+        }
+        .venus-orbit{
+            width: 80%;
+            height: 80%;
+            border: var(--orbit-border);
+            border-radius: 50%;
+            margin: 25px auto;
+            rotate: 180deg;
+            animation: earth-planet 3s linear infinite;
+        }
+        .venus-planet{
+            width: 5%;
+            height: 5%;
+            border-radius: 50%;
+            background: grey;
+            margin: -6px auto;
+        }
+        .mercury-orbit{
+            width: 82%;
+            height: 82%;
+            border-radius: 50%;
+            border: var(--orbit-border);
+            rotate: 180deg;
+            margin: 20px auto;
+            animation: earth-planet 10s linear infinite;
+
+        }
+        .mercury-planet{
+            width: 6%;
+            height: 6%;
+            border-radius: 50%;
+            background: rgb(158, 2, 2);
+            margin: -5px auto;
+        }
+        .sun{
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            background: orange;
+            margin: 22px auto;
+            box-shadow:  0px 0px 80px rgba(255, 170, 0, 0.585);
+        }
+        .hole{
+            width: 5px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgb(189, 100, 11);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(275%,315%);
+        }
+    </style>
+</head>
+<body>
+<div class="home">
+    <h1>Task : Making Solar System Using HTML & CSS Only</h1>
+    <span></span>
+    <span class="span"></span>
+    <span></span>
+    <span class="span"></span>
+    <span></span>
+    <span></span>
+    <span class="span"></span>
+    <span></span>
+    <span class="span"></span>
+    <div class="container-one">
+        <p>Solar System</p> <br>
+        <a href="#solar-sytem">Click here to see</a>
+    </div>
+</div>
+<div class="solar-sytem" id="solar-sytem">
+   <div class="neptiun-orbit">
+        <div class="neptium-planet">
+        </div>
+        <div class="urainus-orbit">
+            <div class="urainus-planet">
+            </div>
+            <div class="saturn-orbit">
+                <div class="saturn-planet-ring-one">
+                    <div class="saturn-planet-ring-two">
+                        <div class="saturn-planet"></div>
+                    </div>
+                </div>
+                <div class="jupiter-orbit">
+                    <div class="jupiter-planet">
+                        <div class="hole"></div> </div>
+                        <div class="mars-orbit">
+                            <div class="mars-planet"></div>
+                                <div class="earth-orbit">
+                                    <div class="earth-system">
+                                        <div class="earth-planet"></div>
+                                        <div class="moon"></div>
+                                    </div>
+                                        <div class="venus-orbit">
+                                            <div class="venus-planet"></div>
+                                                <div class="mercury-orbit">
+                                                    <div class="mercury-planet"></div>
+                                                    <div class="sun"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>    
+</body>
+</html> 
